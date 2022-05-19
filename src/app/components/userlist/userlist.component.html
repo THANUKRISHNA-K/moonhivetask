@@ -1,0 +1,78 @@
+<div class="main-body">
+  <div class="nav-bar">
+    <div class="nav-icon">
+      <span class="title-case"> User list</span>
+    </div>
+    <div class="nav-icon">
+      <button class="icon-btn" (click)="navigate('/dashboard/chart')">
+        <i class="fas fa-chart-bar"></i>
+      </button>
+      <button class="icon-btn">
+        <i class="fas fa-plus" (click)="viewForm(popup)"></i>
+      </button>
+      <button class="icon-btn" (click)="navigate('/login')">
+        <i class="fas fa-sign-out-alt"></i>
+      </button>
+    </div>
+  </div>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Daily task</th>
+      <th>Estimated hours</th>
+    </tr>
+    <tr *ngFor="let i of userData">
+      <td>{{ i.name }}</td>
+      <td>{{ i.email }}</td>
+      <td>{{ i.task }}</td>
+      <td>{{ i.hour }}</td>
+    </tr>
+  </table>
+</div>
+<ng-template #popup>
+  <div class="popup-content">
+    <h1 class="popup-title">Create User</h1>
+    <form [formGroup]="userForm">
+      <div class="row">
+        <label>Name</label>
+        <input
+          name="name"
+          type="text"
+          class="form-control"
+          formControlName="name"
+        />
+      </div>
+      <div class="row">
+        <label>Email</label>
+        <input
+          name="email"
+          type="email"
+          class="form-control"
+          formControlName="email"
+        />
+      </div>
+      <div class="row">
+        <label>Daily task</label>
+        <input
+          name="password"
+          type="text"
+          class="form-control"
+          formControlName="task"
+        />
+      </div>
+      <div class="row">
+        <label>Estimated hours</label>
+        <input
+          name="password"
+          type="number"
+          class="form-control"
+          formControlName="hour"
+        />
+      </div>
+      <div class="btn-ctrl">
+        <button class="btn sav-btn" (click)="save()">Save</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

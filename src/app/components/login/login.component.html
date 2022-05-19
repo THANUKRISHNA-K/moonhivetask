@@ -1,0 +1,26 @@
+<div class="main-body">
+  <div class="col-cont-1">
+    <div class="login-content">
+      <div class="login-title">
+        <div class="wel">Welcome back!</div>
+        <h6>Sign-in to continue</h6>
+      </div>
+
+      <form>
+        <div class="row">
+          <label>Email</label>
+          <input name="Emails" type="email" class="form-control" />
+        </div>
+        <div class="row">
+          <label>Password</label>
+          <input name="password" type="password" class="form-control" />
+        </div>
+      </form>
+      <div class="btn-ctrl">
+        <button class="btn btn-login" (click)="navigate('/dashboard/userlist')">
+          Login
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
