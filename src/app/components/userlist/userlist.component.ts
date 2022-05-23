@@ -26,7 +26,7 @@ export class UserlistComponent implements OnInit {
   }
   ngOnInit(): void {
     this.validForm();
-    this.userData = [
+    this.userData = JSON.parse(localStorage.getItem('user-Data')) || [
       {
         name: 'Ajay',
         email: 'ajay@gmail.com',
